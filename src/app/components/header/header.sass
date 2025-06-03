@@ -1,9 +1,27 @@
 @use '../../../styles/_variables' as *;
 @use '../../../styles/_mixin' as *;
 @use  '../../../styles/_typography' as *;
+@use  '../../../styles/_theme' as *;
 
 
 header
     @include flex-container(flex, space-between, center, row)
     padding: 2rem 1rem
-    background-color: $darkblue
+    background-color: var(--header-bg)
+
+    p
+        @extend .text-preset-4
+
+    .theme-toggler
+        @include flex-container(flex, space-between, center, row)
+        gap: 0.5rem
+
+        i
+            width: 1rem
+            height: 1rem
+
+            &:hover
+                cursor: pointer
+        
+        span
+            @extend .text-preset-5-bold

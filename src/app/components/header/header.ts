@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ThemeService } from '../../services/theme-service';
 
 @Component({
   selector: 'app-header',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './header.sass'
 })
 export class Header {
-
+  protected themeService = inject(ThemeService);
 }

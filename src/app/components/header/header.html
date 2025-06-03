@@ -1,8 +1,8 @@
 <header>
     <p>Where in the world?</p>
 
-    <div class="theme-toggler">
-        <i class="fa-regular fa-moon"></i>
-        <span>Dark Mode</span>
+    <div class="theme-toggler" (click)="themeService.toggleTheme()">
+        <i class="fa-regular" [class]="{'fa-moon': themeService.isLightMode(), 'fa-sun': !themeService.isLightMode()}"></i>
+        <span>{{themeService.isLightMode()  ? 'Dark Mode' : 'Light Mode'}}</span>
     </div>
 </header>
