@@ -2,7 +2,7 @@
     <p>Where in the world?</p>
 
     <div class="theme-toggler" (click)="themeService.toggleTheme()">
-        <i class="fa-regular" [class]="{'fa-moon': themeService.isLightMode(), 'fa-sun': !themeService.isLightMode()}"></i>
-        <span>{{themeService.isLightMode()  ? 'Dark Mode' : 'Light Mode'}}</span>
+        <img [src]="themeService.isLightMode() ? 'outline-moon.svg' : 'moon.svg'" alt="toggle icon">
+        <span>{{themeService.isLightMode()  ? 'Light Mode' : 'Dark Mode'}}</span>
     </div>
 </header>

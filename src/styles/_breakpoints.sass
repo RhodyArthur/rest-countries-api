@@ -1,13 +1,15 @@
-@use "sass:map"
+@use "sass:map";
 
 $breakpoints: (
-    mobile: 23.4375em
-    tablet: 48em
-    desktop: 64em
+  mobile: 23.4375em,
+  tablet: 48em,
+  desktop: 64em,
 )
 
 @mixin mq($key)
-    $size: map.get($breakpoints, $key)
+  $size: map.get($breakpoints, $key)
 
-    @media ( min-width: $size)
+  @media (min-width: $size)
+    @content;
+
         
