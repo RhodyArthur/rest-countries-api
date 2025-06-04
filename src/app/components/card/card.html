@@ -1,6 +1,6 @@
 <main>
     @if (data.isLoading()) {
-        <p>loading...</p>
+        <app-spinner/>
     }
 
     @for (item of data.value(); track $index) {
