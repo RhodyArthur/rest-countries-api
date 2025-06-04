@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
+import { Data } from '../../services/data';
 
 @Component({
   selector: 'app-card',
@@ -8,4 +9,16 @@ import { Component } from '@angular/core';
 })
 export class Card {
 
+  dataService = inject(Data);
+
+  constructor(){
+
+    effect(() => {
+      console.log(this.dataService.countriesData.value())
+    })
+  }
+
+  // getData() {
+  //   this.dataService.countriesData.value()
+  // }
 }
