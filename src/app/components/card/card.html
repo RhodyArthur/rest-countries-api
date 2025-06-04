@@ -1,1 +1,26 @@
-<p>card works</p>
+<main>
+    @if (data.isLoading()) {
+        <app-spinner/>
+    }
+
+    @for (item of data.value(); track $index) {
+    
+        <section>
+            <img [src]="item.flag" alt="country flag" class="flag">
+    
+            <div class="details">
+                <p class="name">{{item.name}}</p>
+        
+                <div class="info">
+                    <div class="category">Population: <span class="value">{{item.population | number}}</span></div>
+                    <div class="category">Region: <span class="value">{{item.region}}</span></div>
+                    <div class="category">Capital: <span class="value">{{item.capital}}</span></div>
+                </div>
+            </div>
+        </section>
+    }
+
+    @if (data.error()) {
+        <p>Unable to load data</p>
+    }
+</main>

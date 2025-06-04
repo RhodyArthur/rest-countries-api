@@ -1,0 +1,48 @@
+@use  '../../../styles/_breakpoints' as *;
+@use '../../../styles/_variables' as *;
+@use '../../../styles/_mixin' as *;
+@use  '../../../styles/_typography' as *;
+@use  '../../../styles/_theme' as *;
+
+main
+    @include flex-container(flex, null, null, column)
+    gap: 2.5rem
+
+    section
+        width: pxToRem(264)
+        @include flex-container(flex, null, null, column)
+        border-radius: 0.5rem
+        background-color: var(--header-bg)
+
+
+
+        .flag
+            width: 100%
+            height: pxToRem(160)
+            object-fit: cover
+            border-radius: 0.5rem 0.5rem 0 0
+
+        .details
+            @include flex-container(flex, center, null, column)
+            gap: 1rem
+            padding: 1.5rem
+            padding-right: 0
+
+            .name
+                @extend .text-preset-2
+
+            .info
+                @include flex-container(flex, null, null, column)
+                gap: 0.5rem
+
+                .category
+                    @extend .text-preset-4
+
+                    .value
+                        @extend .text-preset-4-light
+
+@include mq(tablet)
+    main
+        @include flex-container(flex, center, center, row)
+        flex-wrap: wrap
+        
