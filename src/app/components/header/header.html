@@ -1,0 +1,8 @@
+<header>
+    <p>Where in the world?</p>
+
+    <div class="theme-toggler" (click)="themeService.toggleTheme()">
+        <img [src]="themeService.isLightMode() ? 'outline-moon.svg' : 'moon.svg'" alt="toggle icon">
+        <span>{{themeService.isLightMode()  ? 'Light Mode' : 'Dark Mode'}}</span>
+    </div>
+</header>
