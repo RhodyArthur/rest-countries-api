@@ -43,11 +43,6 @@ main
 
 @include mq(tablet)
     main
-        display: grid
-        grid-template-columns: repeat(2, 1fr)
-
-@include mq(desktop)
-    main
         @include flex-container(flex, center, center, row)
         flex-wrap: wrap
         

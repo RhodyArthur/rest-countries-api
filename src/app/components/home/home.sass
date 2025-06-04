@@ -10,20 +10,23 @@ main
 
     section
         @include flex-container(flex, null, null, column)
-        gap: 2.5rem
-        padding: 1rem
+        gap: 2rem
 
-        div
+        .search-filter
             @include flex-container(flex, null, null, column)
-            gap: 2rem
+            gap: 2.5rem
+            padding-inline: 1rem
 
-            .country-list
-                margin: auto
 
-@include mq(tablet)
-    .coutry-list
-        display: flex
-        justify-content: center
-        align-items: center
+        .country-list
+            margin: auto
+
+@include mq(desktop)
+    main
+        section
+            .search-filter
+                @include flex-container(flex, space-between, null, row)
+                padding-inline: 4rem
+
 
     
