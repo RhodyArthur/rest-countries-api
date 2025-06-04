@@ -1,13 +1,26 @@
-@for (item of data.value(); track $index) {
+<main>
+    @if (data.isLoading()) {
+        <p>loading...</p>
+    }
 
-    <section>
-        <div class="flag"></div>
-        <div class="details">
-            <h3>{{item.name}}</h3>
+    @for (item of data.value(); track $index) {
     
-            <div>
-                <span>population</span>: <span>20</span>
+        <section>
+            <img [src]="item.flag" alt="country flag" class="flag">
+    
+            <div class="details">
+                <p class="name">{{item.name}}</p>
+        
+                <div class="info">
+                    <div class="category">Population: <span class="value">{{item.population | number}}</span></div>
+                    <div class="category">Region: <span class="value">{{item.region}}</span></div>
+                    <div class="category">Capital: <span class="value">{{item.capital}}</span></div>
+                </div>
             </div>
-        </div>
-    </section>
-}
+        </section>
+    }
+
+    @if (data.error()) {
+        <p>Unable to load data</p>
+    }
+</main>

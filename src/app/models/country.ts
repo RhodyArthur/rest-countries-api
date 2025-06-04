@@ -10,6 +10,7 @@ export interface Country {
     alpha3Code: string;
     borders: string[];
     currencies: Currency[];
+    capital: string;
 }
 
 export interface Currency {

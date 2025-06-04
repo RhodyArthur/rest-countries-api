@@ -1,9 +1,10 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Data } from '../../services/data';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-card',
-  imports: [],
+  imports: [DecimalPipe],
   templateUrl: './card.html',
   styleUrl: './card.sass'
 })
@@ -12,14 +13,5 @@ export class Card {
   dataService = inject(Data);
   data = this.dataService.countriesData;
 
-  constructor(){
-
-    effect(() => {
-      console.log(this.dataService.countriesData.value())
-    })
-  }
-
-  // getData() {
-  //   this.dataService.countriesData.value()
-  // }
+  constructor(){}
 }

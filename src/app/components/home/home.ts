@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Header } from "../header/header";
-import { CountryList } from "../country-list/country-list";
+import { Card } from "../card/card";
 
 @Component({
   selector: 'app-home',
-  imports: [Header, CountryList],
+  imports: [Header, Card],
   templateUrl: './home.html',
   styleUrl: './home.sass'
 })
