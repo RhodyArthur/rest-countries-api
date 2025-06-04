@@ -1,10 +1,13 @@
-<section>
-    <div class="flag"></div>
-    <div class="details">
-        <h3>Country name</h3>
+@for (item of data.value(); track $index) {
 
-        <div>
-            <span>population</span>: <span>20</span>
+    <section>
+        <div class="flag"></div>
+        <div class="details">
+            <h3>{{item.name}}</h3>
+    
+            <div>
+                <span>population</span>: <span>20</span>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+}

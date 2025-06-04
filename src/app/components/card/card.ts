@@ -10,6 +10,7 @@ import { Data } from '../../services/data';
 export class Card {
 
   dataService = inject(Data);
+  data = this.dataService.countriesData;
 
   constructor(){
 
