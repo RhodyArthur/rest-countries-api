@@ -1,0 +1,24 @@
+@use  '../../../styles/_breakpoints' as *;
+@use '../../../styles/_variables' as *;
+@use '../../../styles/_mixin' as *;
+@use  '../../../styles/_typography' as *;
+@use  '../../../styles/_theme' as *;
+
+section
+    width: pxToRem(264)
+    height: pxToRem(336)
+    @include flex-container(flex, flex-start, null, column)
+    border: 1px solid red
+    border-radius: 0.5rem
+
+
+    .flag
+        background-color: red
+        width: 100%
+        height: pxToRem(160)
+
+    .details
+        @include flex-container(flex, center, null, column)
+        padding: 1.5rem
+        text-align: left
+    
