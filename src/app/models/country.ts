@@ -1,20 +1,34 @@
 export interface Country {
-    name: string;
-    nativeName: string;
-    flag: string;
+    name: Name;
+    flags: string[];
     population: number;
     region: string;
     subregion: string;
-    languages: string[];
+    languages: Language;
     topLevelDomain: string[];
-    alpha3Code: string;
     borders: string[];
     currencies: Currency[];
-    capital: string;
+    capital: string[];
 }
 
 export interface Currency {
-    code: string;
-    name: string;
-    symbol: string;
+    [code: string]: {
+      symbol: string;
+      name: string;
+    };
+}
+
+export interface Name {
+    common: string;
+    official: string;
+    nativeName: {
+      [key: string]: {
+        official: string;
+        common: string;
+      };
+    };
+}
+
+export interface Language {
+    [code: string]: string;
 }

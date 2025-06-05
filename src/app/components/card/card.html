@@ -6,10 +6,10 @@
     @for (item of data.value(); track $index) {
     
         <section>
-            <img [src]="item.flag" alt="country flag" class="flag">
+            <img [src]="item.flags[0]" alt="country flag" class="flag">
     
             <div class="details">
-                <p class="name">{{item.name}}</p>
+                <p class="name">{{item.name.common}}</p>
         
                 <div class="info">
                     <div class="category">Population: <span class="value">{{item.population | number}}</span></div>

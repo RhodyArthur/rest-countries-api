@@ -11,6 +11,7 @@ main
     section
         @include flex-container(flex, null, null, column)
         gap: 2rem
+        padding-bottom: 1rem
 
         .search-filter
             @include flex-container(flex, null, null, column)
@@ -24,6 +25,8 @@ main
 @include mq(desktop)
     main
         section
+            padding-bottom: 4rem
+            
             .search-filter
                 @include flex-container(flex, space-between, null, row)
                 padding-inline: 4rem
