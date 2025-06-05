@@ -1,3 +1,3 @@
 export const environment = {
-    apiUrl :'https://restcountries.com/v2'
+    apiUrl :'https://restcountries.com/v3.1'
 };

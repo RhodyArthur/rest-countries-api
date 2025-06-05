@@ -6,7 +6,7 @@
     @for (item of data.value(); track $index) {
     
         <section>
-            <img [src]="item.flags[0]" alt="country flag" class="flag">
+            <img [src]="item.flags.svg" [alt]="item.flags.alt" class="flag">
     
             <div class="details">
                 <p class="name">{{item.name.common}}</p>

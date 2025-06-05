@@ -1,6 +1,6 @@
 export interface Country {
     name: Name;
-    flags: string[];
+    flags: Flags;
     population: number;
     region: string;
     subregion: string;
@@ -31,4 +31,10 @@ export interface Name {
 
 export interface Language {
     [code: string]: string;
+}
+
+export interface Flags {
+  png: string;
+  svg: string;
+  alt: string
 }
