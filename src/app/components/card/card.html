@@ -1,9 +1,5 @@
 <main>
-    @if (data.isLoading()) {
-        <app-spinner/>
-    }
-
-    @for (item of data.value(); track $index) {
+    @for (item of filteredData(); track $index) {
     
         <section>
             <img [src]="item.flags.svg" [alt]="item.flags.alt" class="flag">
@@ -18,9 +14,5 @@
                 </div>
             </div>
         </section>
-    }
-
-    @if (data.error()) {
-        <p>Unable to load data</p>
     }
 </main>

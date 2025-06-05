@@ -3,13 +3,20 @@
 
     <section>
         <div class="search-filter">
-            <app-searchbar/>
+            <app-searchbar (searchChanged)="onSearchChanged($event)"/>
 
             <p>Filter</p>
         </div>
 
         <div class="country-list">
-            <app-card/>
+            @if (data.isLoading()) {
+                <app-spinner/>
+            }       
+            <app-card [filteredData]="filteredCountries()"/>
+
+            @if (data.error()) {
+                <p>Unable to load data</p>
+            }
         </div>
     </section>
 </main>

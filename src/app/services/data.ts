@@ -11,8 +11,6 @@ export class Data {
   constructor() { }
 
   fields = signal<string[]>(['name','flags', 'population', 'borders', 'region', 'subregion', 'languages', 'capital', 'currencies', 'topLevelDomain']);
-  searchItem = signal<string>('');
-
 
   readonly countriesData = httpResource<Country[]>(() => {
     const selectedFields = this.fields()
