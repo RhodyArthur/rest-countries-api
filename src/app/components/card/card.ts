@@ -1,18 +1,15 @@
-import { Component, inject } from '@angular/core';
-import { Data } from '../../services/data';
+import { Component, input } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
-import { Spinner } from "../spinner/spinner";
+import { Country } from '../../models/country';
 
 @Component({
   selector: 'app-card',
-  imports: [DecimalPipe, Spinner],
+  imports: [DecimalPipe],
   templateUrl: './card.html',
   styleUrl: './card.sass'
 })
 export class Card {
 
-  dataService = inject(Data);
-  data = this.dataService.countriesData;
+  filteredData = input<Country[]>();
 
-  constructor(){}
 }
