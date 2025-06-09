@@ -1,0 +1,6 @@
+<select name="regions" id="regions" (change)="onSelectedRegion($event)">
+    <option value="" selected disabled>Filter by Region</option>
+    @for (region of regions(); track $index) {
+        <option [value]="region">{{region}}</option>
+    }
+</select>

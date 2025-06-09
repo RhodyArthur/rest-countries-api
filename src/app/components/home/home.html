@@ -5,7 +5,7 @@
         <div class="search-filter">
             <app-searchbar (searchChanged)="onSearchChanged($event)"/>
 
-            <p>Filter</p>
+            <app-filter (selectRegion)="onSelectedRegion($event)"/>
         </div>
 
         <div class="country-list">
