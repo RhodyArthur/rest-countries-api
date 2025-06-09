@@ -4,10 +4,11 @@ import { Card } from "../card/card";
 import { Searchbar } from "../searchbar/searchbar";
 import { Data } from '../../services/data';
 import { Spinner } from "../spinner/spinner";
+import { Filter } from "../filter/filter";
 
 @Component({
   selector: 'app-home',
-  imports: [Header, Card, Searchbar, Spinner],
+  imports: [Header, Card, Searchbar, Spinner, Filter],
   templateUrl: './home.html',
   styleUrl: './home.sass'
 })
@@ -44,5 +45,9 @@ export class Home {
 
   onSearchChanged(value: string) {
     this.searchQuery.set(value)
+  }
+
+  onSelectedRegion(value: string) {
+    this.selectedRegion.set(value)
   }
 }
