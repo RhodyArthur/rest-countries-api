@@ -1,0 +1,71 @@
+@use  '../../../styles/_breakpoints' as *;
+@use '../../../styles/_variables' as *;
+@use '../../../styles/_mixin' as *;
+@use  '../../../styles/_typography' as *;
+@use  '../../../styles/_theme' as *;
+
+main
+    @include flex-container(flex, null, null, column)
+    gap: 4rem
+    padding: 0 pxToRem(28) pxToRem(62)
+
+    a
+        @include flex-container(flex, null, center, row)
+        gap: 0.5rem
+        text-decoration: none
+        color: var(--text-color)
+        border-radius: 2px
+        background-color: var(--header-bg)
+        width: fit-content
+        padding: pxToRem(6) 1.5rem
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1)
+        cursor: pointer
+        @extend .text-preset-5
+
+    .details
+        @include flex-container(flex, null, null, column)
+        gap: pxToRem(44)
+
+        img
+            object-fit: cover
+            border-radius: 0.5rem
+            height: pxToRem(229)
+
+        .details-content
+            @include flex-container(flex, null, null, column)
+            gap: 1rem
+
+            h3
+                font-size: pxToRem(22)
+                font-weight: 600
+
+            .col
+                @include flex-container(flex, null, null, column)
+                gap: 2rem
+
+                .info
+                    @include flex-container(flex, null, null, column)
+                    gap: 0.5rem
+
+                    .category
+                        @extend .text-preset-4
+
+                        .value
+                            @extend .text-preset-4-light
+                
+                .borders
+                    @include flex-container(flex, null, null, column)
+                    gap: 1rem
+
+                    .borders-wrapper
+                        @include flex-container(flex, null, null, row)
+                        flex-wrap: wrap
+                        gap: 1rem
+                    
+
+                    
+
+            
+
+        
+    

@@ -21,12 +21,7 @@ export interface Currency {
 export interface Name {
     common: string;
     official: string;
-    nativeName: {
-      [key: string]: {
-        official: string;
-        common: string;
-      };
-    };
+    nativeName: NativeName
 }
 
 export interface Language {
@@ -37,4 +32,11 @@ export interface Flags {
   png: string;
   svg: string;
   alt: string
+}
+
+export interface NativeName {
+  [key: string]: {
+        official: string;
+        common: string;
+  };
 }

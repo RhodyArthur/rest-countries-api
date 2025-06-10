@@ -1,7 +1,7 @@
 <main>
     @for (item of filteredData(); track $index) {
     
-        <section>
+        <section (click)="showDetails(item)">
             <img [src]="item.flags.svg" [alt]="item.flags.alt" class="flag">
     
             <div class="details">

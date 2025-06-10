@@ -17,4 +17,6 @@ export class Searchbar {
     this.searchTerm.set(target.value)
     this.searchChanged.emit(this.searchTerm())
   }
+
+
 }
