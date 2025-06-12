@@ -6,11 +6,11 @@
         @if(borders()) {
 
             @for (border of borders(); track $index) {
-                <a href="">{{border}}</a>
+                <a (click)="onCodeChange(border)">{{border}}</a>
             }
-            @empty {
-                <p>No border countries</p>
-            }
+        }
+        @else {
+            <p>No border countries</p>
         }
     </div>
 </section>

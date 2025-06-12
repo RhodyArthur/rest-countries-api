@@ -31,7 +31,7 @@
                 </div>
     
 
-                <app-borders [borders]="borders()"/>
+                <app-borders [borders]="borders()" (codeChange)="onBorderClicked($event)"/>
             </section>
     
     

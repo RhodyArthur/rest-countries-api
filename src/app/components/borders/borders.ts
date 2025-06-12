@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-borders',
@@ -7,5 +7,11 @@ import { Component, input } from '@angular/core';
   styleUrl: './borders.sass'
 })
 export class Borders {
-borders = input<string[]>();
+  borders = input<string[]>();
+  
+  codeChange = output<string>();
+
+  onCodeChange(countryCode: string) {
+    this.codeChange.emit(countryCode)
+  }
 }

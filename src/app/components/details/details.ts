@@ -1,10 +1,11 @@
-import { Component, computed, effect, inject, signal } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Component, computed, effect, EnvironmentInjector, inject, runInInjectionContext, signal } from '@angular/core';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Data } from '../../services/data';
 import { Country } from '../../models/country';
 import { HttpResourceRef } from '@angular/common/http';
 import { DecimalPipe } from '@angular/common';
 import { Borders } from "../borders/borders";
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-details',
@@ -16,9 +17,13 @@ export class Details {
 
   route = inject(ActivatedRoute);
   dataService = inject(Data);
+  router = inject(Router)
   countryName = signal<string | null>(null);
+  countryCode = signal<string>('');
 
   country!: HttpResourceRef<Country[] | undefined>;
+    private injector = inject(EnvironmentInjector);
+
 
 
   countryData = computed(() => {
@@ -27,17 +32,9 @@ export class Details {
   })
   
 
-
   constructor() {
     const init = this.route.snapshot.params['countryName']
     this.country = this.dataService.getCountryByName(init)
-
-    this.route.params.subscribe(params => {
-      const name  = params['countryName'];
-      this.country = this.dataService.getCountryByName(name)
-    })
-
-    effect(() => console.log(this.countryData()))
   }
   
   borders = computed(() => {
@@ -79,4 +76,23 @@ export class Details {
     return undefined
   }
 
+  onBorderClicked(code: string) {
+    this.countryCode.set(code)
+    
+    runInInjectionContext(this.injector, () => {
+      const dataRes = this.dataService.getCountryByCode(this.countryCode())
+ 
+     
+      effect(() => {
+      const data = dataRes.value();
+      if (data && data.length > 0) {
+        const countryName = data[0].name.common;
+        this.country.set(data)
+        this.router.navigate(['/name', countryName]);
+      }
+    });
+  });
+    
+    
+  }
 }
