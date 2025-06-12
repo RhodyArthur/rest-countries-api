@@ -15,7 +15,7 @@
                 <div class="col-info">
 
                     <div class="info">
-                        <div class="category">Native Name: <span class="value">nativeNames</span></div>
+                        <div class="category">Native Name: <span class="value">{{getNativeName()}}</span></div>
                         <div class="category">Population: <span class="value">{{countryData()?.population | number}}</span></div>
                         <div class="category">Region: <span class="value">{{countryData()?.region}}</span></div>
                         <div class="category">Sub Region: <span class="value">{{countryData()?.subregion}}</span></div>
@@ -23,9 +23,9 @@
                     </div>
             
                     <div class="info">
-                        <div class="category">Top Level Domain: <span class="value">name</span></div>
-                        <div class="category">Currencies: <span class="value">name</span></div>
-                        <div class="category">Languages: <span class="value">name</span></div>
+                        <div class="category">Top Level Domain: <span class="value">{{countryData()?.tld}}</span></div>
+                        <div class="category">Currencies: <span class="value">{{getCurrencies()}}</span></div>
+                        <div class="category">Languages: <span class="value">{{getLanguages()}}</span></div>
             
                     </div>
                 </div>

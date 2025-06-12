@@ -5,9 +5,9 @@ export interface Country {
     region: string;
     subregion: string;
     languages: Language;
-    topLevelDomain: string[];
+    tld: string[];
     borders: string[];
-    currencies: Currency[];
+    currencies: Currency;
     capital: string[];
 }
 
