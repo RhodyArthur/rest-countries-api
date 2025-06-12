@@ -1,0 +1,16 @@
+<section class="borders">
+    <p>Border Countries:</p>
+
+    <div class="borders-wrapper">
+
+        @if(borders()) {
+
+            @for (border of borders(); track $index) {
+                <a (click)="onCodeChange(border)">{{border}}</a>
+            }
+        }
+        @else {
+            <p>No border countries</p>
+        }
+    </div>
+</section>

@@ -1,0 +1,27 @@
+@use  '../../../styles/_breakpoints' as *;
+@use '../../../styles/_variables' as *;
+@use '../../../styles/_mixin' as *;
+@use  '../../../styles/_typography' as *;
+@use  '../../../styles/_theme' as *;
+
+.borders
+    @include flex-container(flex, null, null, column)
+    gap: 1rem
+
+    .borders-wrapper
+        @include flex-container(flex, null, null, row)
+        flex-wrap: wrap
+        gap: 1rem
+
+        a
+            @include flex-container(flex, null, center, row)
+            gap: 0.5rem
+            text-decoration: none
+            color: var(--text-color)
+            border-radius: 4px
+            background-color: var(--header-bg)
+            width: fit-content
+            padding: pxToRem(6) 1.5rem
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1)
+            cursor: pointer
+            @extend .text-preset-5
