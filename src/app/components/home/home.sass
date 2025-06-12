@@ -1,0 +1,35 @@
+@use  '../../../styles/_breakpoints' as *;
+@use '../../../styles/_variables' as *;
+@use '../../../styles/_mixin' as *;
+@use  '../../../styles/_typography' as *;
+@use  '../../../styles/_theme' as *;
+
+main
+    @include flex-container(flex, null, null, column)
+    gap: 1.5rem
+
+    section
+        @include flex-container(flex, null, null, column)
+        gap: 2rem
+        padding-bottom: 1rem
+
+        .search-filter
+            @include flex-container(flex, null, null, column)
+            gap: 2.5rem
+            padding-inline: 1rem
+
+
+        .country-list
+            margin: auto
+
+@include mq(desktop)
+    main
+        section
+            padding-bottom: 4rem
+            
+            .search-filter
+                @include flex-container(flex, space-between, null, row)
+                padding-inline: 4rem
+
+
+    

@@ -1,0 +1,21 @@
+<main>
+    @for (item of filteredData(); track $index) {
+    
+        <section (click)="showDetails(item)">
+            <img [src]="item.flags.svg" [alt]="item.flags.alt" class="flag">
+    
+            <div class="details">
+                <p class="name">{{item.name.common}}</p>
+        
+                <div class="info">
+                    <div class="category">Population: <span class="value">{{item.population | number}}</span></div>
+                    <div class="category">Region: <span class="value">{{item.region}}</span></div>
+                    <div class="category">Capital: <span class="value">{{item.capital}}</span></div>
+                </div>
+            </div>
+        </section>
+    }
+    @empty {
+        <p>No country found</p>
+    }
+</main>

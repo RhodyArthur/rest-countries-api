@@ -1,0 +1,21 @@
+<main>
+    <section>
+        <div class="search-filter">
+            <app-searchbar (searchChanged)="onSearchChanged($event)"/>
+
+            <app-filter (selectRegion)="onSelectedRegion($event)"/>
+        </div>
+
+        <div class="country-list">
+            @if (data.isLoading()) {
+                <app-spinner/>
+            }       
+            <app-card [filteredData]="filteredCountries()"/>
+
+            @if (data.error()) {
+                <p>Unable to load data</p>
+            }
+        </div>
+    </section>
+
+</main>

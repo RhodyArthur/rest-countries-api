@@ -1,0 +1,45 @@
+@use  '../../../styles/_breakpoints' as *;
+@use '../../../styles/_variables' as *;
+@use '../../../styles/_mixin' as *;
+@use  '../../../styles/_typography' as *;
+@use  '../../../styles/_theme' as *;
+
+
+
+header
+    @include flex-container(flex, space-between, center, row)
+    padding: 2rem 1rem
+    background-color: var(--header-bg)
+
+    p
+        @extend .text-preset-4
+
+    .theme-toggler
+        @include flex-container(flex, space-between, center, row)
+        gap: 0.5rem
+
+        &:hover
+            cursor: pointer
+
+        img
+            width: 1rem
+            height: 1rem
+
+        
+        span
+            @extend .text-preset-5-bold
+
+@include mq(desktop)
+    header
+        padding: pxToRem(30) 5rem
+
+        p
+            font-size: 1.5rem
+
+        .theme-toggler
+            img
+                width: 1.25rem
+                height: 1.25rem
+
+            span
+                font-size: 1rem

@@ -1,0 +1,40 @@
+<main>
+    <a [routerLink]="['/']">
+        <img src="call-made.svg" alt="arrow left icon">
+        Back 
+    </a>
+
+    <section class="details">
+
+        <img [src]="countryData()?.flags?.png" alt="flag">
+    
+        <section class="details-content">
+            <h3>{{countryData()?.name?.common}}</h3>
+    
+            <section class="col">
+                <div class="col-info">
+
+                    <div class="info">
+                        <div class="category">Native Name: <span class="value">{{getNativeName()}}</span></div>
+                        <div class="category">Population: <span class="value">{{countryData()?.population | number}}</span></div>
+                        <div class="category">Region: <span class="value">{{countryData()?.region}}</span></div>
+                        <div class="category">Sub Region: <span class="value">{{countryData()?.subregion}}</span></div>
+                        <div class="category">Capital: <span class="value">{{countryData()?.capital}}</span></div>
+                    </div>
+            
+                    <div class="info">
+                        <div class="category">Top Level Domain: <span class="value">{{countryData()?.tld}}</span></div>
+                        <div class="category">Currencies: <span class="value">{{getCurrencies()}}</span></div>
+                        <div class="category">Languages: <span class="value">{{getLanguages()}}</span></div>
+            
+                    </div>
+                </div>
+    
+
+                <app-borders [borders]="borders()" (codeChange)="onBorderClicked($event)"/>
+            </section>
+    
+    
+        </section>
+    </section>
+</main>
