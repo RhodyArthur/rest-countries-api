@@ -1,13 +1,14 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Data } from '../../services/data';
 import { Country } from '../../models/country';
 import { HttpResourceRef } from '@angular/common/http';
 import { DecimalPipe } from '@angular/common';
+import { Borders } from "../borders/borders";
 
 @Component({
   selector: 'app-details',
-  imports: [DecimalPipe, RouterLink],
+  imports: [DecimalPipe, RouterLink, Borders],
   templateUrl: './details.html',
   styleUrl: './details.sass'
 })
@@ -19,12 +20,12 @@ export class Details {
 
   country!: HttpResourceRef<Country[] | undefined>;
 
-  languages: string[] = [];
 
   countryData = computed(() => {
     const data = this.country.value()
     return data?.[0]
   })
+  
 
 
   constructor() {
@@ -35,14 +36,20 @@ export class Details {
       const name  = params['countryName'];
       this.country = this.dataService.getCountryByName(name)
     })
+
+    effect(() => console.log(this.countryData()))
   }
   
+  borders = computed(() => {
+    return this.countryData()?.borders
+  })
 
   getLanguages() {
     const languages = this.countryData()?.languages;
+
     if(languages) {
       const languageObj = Object.values(languages)
-      return languageObj[0]
+      return languageObj.join(', ')
     }
     return undefined
   }

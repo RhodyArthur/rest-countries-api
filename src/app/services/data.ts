@@ -1,8 +1,7 @@
-import { httpResource, HttpResourceRef } from '@angular/common/http';
+import { httpResource } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
 import { Country } from '../models/country';
 import { environment } from '../../environments/environment.development';
-import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +20,10 @@ export class Data {
 
   getCountryByName(countryName: string | null) {
     return httpResource<Country[]>(() => `${environment.apiUrl}/name/${countryName}?fullText=true`)
+  }
+
+  getCountryByCode(countryCode: string | null) {
+    return httpResource<Country[]>(() => `${environment.apiUrl}/alpha/${countryCode}`)
   }
 
 }

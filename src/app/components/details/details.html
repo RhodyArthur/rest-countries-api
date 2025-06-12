@@ -30,19 +30,8 @@
                     </div>
                 </div>
     
-                <div class="borders">
-                    <p>Border Countries:</p>
 
-                    <div class="borders-wrapper">
-
-                        @for (border of countryData()?.borders; track $index) {
-                            <a href="">{{border}}</a>
-                        }
-                        @empty {
-                            <p>No border countries</p>
-                        }
-                    </div>
-                </div>
+                <app-borders [borders]="borders()"/>
             </section>
     
     

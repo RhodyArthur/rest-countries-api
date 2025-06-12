@@ -9,6 +9,7 @@ export interface Country {
     borders: string[];
     currencies: Currency;
     capital: string[];
+    cca3: string;
 }
 
 export interface Currency {
