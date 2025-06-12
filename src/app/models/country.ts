@@ -5,9 +5,9 @@ export interface Country {
     region: string;
     subregion: string;
     languages: Language;
-    topLevelDomain: string[];
+    tld: string[];
     borders: string[];
-    currencies: Currency[];
+    currencies: Currency;
     capital: string[];
 }
 
@@ -21,12 +21,7 @@ export interface Currency {
 export interface Name {
     common: string;
     official: string;
-    nativeName: {
-      [key: string]: {
-        official: string;
-        common: string;
-      };
-    };
+    nativeName: NativeName
 }
 
 export interface Language {
@@ -37,4 +32,11 @@ export interface Flags {
   png: string;
   svg: string;
   alt: string
+}
+
+export interface NativeName {
+  [key: string]: {
+        official: string;
+        common: string;
+  };
 }

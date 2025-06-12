@@ -1,5 +1,4 @@
 import { Component, computed, inject, signal } from '@angular/core';
-import { Header } from "../header/header";
 import { Card } from "../card/card";
 import { Searchbar } from "../searchbar/searchbar";
 import { Data } from '../../services/data';
@@ -8,7 +7,7 @@ import { Filter } from "../filter/filter";
 
 @Component({
   selector: 'app-home',
-  imports: [Header, Card, Searchbar, Spinner, Filter],
+  imports: [ Card, Searchbar, Spinner, Filter],
   templateUrl: './home.html',
   styleUrl: './home.sass'
 })
