@@ -1,5 +1,5 @@
 <main>
-    <a href="">
+    <a [routerLink]="['/']">
         <img src="call-made.svg" alt="arrow left icon">
         Back 
     </a>
@@ -12,19 +12,22 @@
             <h3>{{countryData()?.name?.common}}</h3>
     
             <section class="col">
-                <div class="info">
-                    <div class="category">Native Name: <span class="value">nativeNames</span></div>
-                    <div class="category">Population: <span class="value">{{countryData()?.population | number}}</span></div>
-                    <div class="category">Region: <span class="value">{{countryData()?.region}}</span></div>
-                    <div class="category">Sub Region: <span class="value">{{countryData()?.subregion}}</span></div>
-                    <div class="category">Capital: <span class="value">{{countryData()?.capital}}</span></div>
-                </div>
-        
-                <div class="info">
-                    <div class="category">Top Level Domain: <span class="value">name</span></div>
-                    <div class="category">Currencies: <span class="value">name</span></div>
-                    <div class="category">Languages: <span class="value">name</span></div>
-        
+                <div class="col-info">
+
+                    <div class="info">
+                        <div class="category">Native Name: <span class="value">nativeNames</span></div>
+                        <div class="category">Population: <span class="value">{{countryData()?.population | number}}</span></div>
+                        <div class="category">Region: <span class="value">{{countryData()?.region}}</span></div>
+                        <div class="category">Sub Region: <span class="value">{{countryData()?.subregion}}</span></div>
+                        <div class="category">Capital: <span class="value">{{countryData()?.capital}}</span></div>
+                    </div>
+            
+                    <div class="info">
+                        <div class="category">Top Level Domain: <span class="value">name</span></div>
+                        <div class="category">Currencies: <span class="value">name</span></div>
+                        <div class="category">Languages: <span class="value">name</span></div>
+            
+                    </div>
                 </div>
     
                 <div class="borders">
@@ -34,6 +37,9 @@
 
                         @for (border of countryData()?.borders; track $index) {
                             <a href="">{{border}}</a>
+                        }
+                        @empty {
+                            <p>No border countries</p>
                         }
                     </div>
                 </div>

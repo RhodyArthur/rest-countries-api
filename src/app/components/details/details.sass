@@ -14,7 +14,7 @@ main
         gap: 0.5rem
         text-decoration: none
         color: var(--text-color)
-        border-radius: 2px
+        border-radius: 4px
         background-color: var(--header-bg)
         width: fit-content
         padding: pxToRem(6) 1.5rem
@@ -30,6 +30,7 @@ main
             object-fit: cover
             border-radius: 0.5rem
             height: pxToRem(229)
+            width: 100%
 
         .details-content
             @include flex-container(flex, null, null, column)
@@ -43,15 +44,19 @@ main
                 @include flex-container(flex, null, null, column)
                 gap: 2rem
 
-                .info
+                .col-info
                     @include flex-container(flex, null, null, column)
-                    gap: 0.5rem
+                    gap: 2rem
 
-                    .category
-                        @extend .text-preset-4
+                    .info
+                        @include flex-container(flex, null, null, column)
+                        gap: 0.5rem
 
-                        .value
-                            @extend .text-preset-4-light
+                        .category
+                            @extend .text-preset-4
+
+                            .value
+                                @extend .text-preset-4-light
                 
                 .borders
                     @include flex-container(flex, null, null, column)
@@ -63,9 +68,38 @@ main
                         gap: 1rem
                     
 
-                    
+@include mq(tablet)
+    main
+        .details
+            align-items: center
+            img
+                width: pxToRem(560)
+                object-fit: cover
 
-            
+            .details-content
+                width: pxToRem(560)
+
+                h3
+                    font-size: 2rem
+
+                .col
+                    .col-info
+                        flex-direction: row
+                        justify-content: space-between             
+
+@include mq(desktop)
+    main
+        padding: 0 5rem 5rem
+
+        .details
+            @include flex-container(flex, null, flex-start, row)
+            gap: pxToRem(144)
+
+            img
+                height: pxToRem(401)
+
+            .details-content
+                align-self: center
 
         
     

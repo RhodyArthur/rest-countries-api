@@ -1,5 +1,5 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Data } from '../../services/data';
 import { Country, NativeName } from '../../models/country';
 import { HttpResourceRef } from '@angular/common/http';
@@ -7,7 +7,7 @@ import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-details',
-  imports: [DecimalPipe],
+  imports: [DecimalPipe, RouterLink],
   templateUrl: './details.html',
   styleUrl: './details.sass'
 })
