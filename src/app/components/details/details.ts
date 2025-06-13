@@ -6,10 +6,11 @@ import { HttpResourceRef } from '@angular/common/http';
 import { DecimalPipe } from '@angular/common';
 import { Borders } from "../borders/borders";
 import { toSignal } from '@angular/core/rxjs-interop';
+import { Spinner } from "../spinner/spinner";
 
 @Component({
   selector: 'app-details',
-  imports: [DecimalPipe, RouterLink, Borders],
+  imports: [DecimalPipe, RouterLink, Borders, Spinner],
   templateUrl: './details.html',
   styleUrl: './details.sass'
 })

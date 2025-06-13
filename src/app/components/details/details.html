@@ -1,4 +1,7 @@
 <main>
+    @if (country.isLoading()) {
+        <app-spinner/>
+    }
     <a [routerLink]="['/']">
         <img src="call-made.svg" alt="arrow left icon">
         Back 
