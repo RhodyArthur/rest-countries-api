@@ -9,7 +9,7 @@
 
     <section class="details">
 
-        <img [src]="countryData()?.flags?.png" alt="flag">
+        <img [src]="countryData()?.flags?.png" alt="{{countryData()?.flags?.alt}}">
     
         <section class="details-content">
             <h3>{{countryData()?.name?.common}}</h3>
